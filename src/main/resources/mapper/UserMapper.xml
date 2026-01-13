@@ -1,0 +1,16 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD usermap.userMapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bill.mapper.userMapper">
+    <insert id="insertUser">
+        insert into user(name, password) values(#{user.name},#{user.password})
+    </insert>
+
+    <select id="findByName"  resultType="com.bill.entity.user">
+        select * from user where name = #{name}
+    </select>
+    <select id="findByNameAndPassword" resultType="com.bill.entity.user">
+        select * from user where name=#{name} and password=#{password}
+    </select>
+
+</mapper>
